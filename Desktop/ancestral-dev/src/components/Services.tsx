@@ -4,24 +4,24 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 const SERVICES = [
   {
     icon: Monitor,
-    title: "Desktop applications",
+    title: "Desktop & Web Applications",
     description:
-      "Native and cross-platform software for Windows, macOS, and Linux, built to run quietly in the background of someone's workday for years.",
-    points: ["Internal tools & dashboards", "Cross-platform builds", "Legacy app modernization"],
+      "Native and cross-platform software for Windows, macOS, and Linux. Full-stack applications built to last.",
+    points: ["Sleek interfaces", "Blazing performance", "Easy deployment"],
   },
   {
     icon: Smartphone,
-    title: "Android apps",
+    title: "Android Apps",
     description:
-      "From first release to Play Store maintenance — apps that stay fast, stay updated, and stay out of your users' way.",
+      "Leveraging Google's Material Expressive design to create stunning apps that feel smooth on every screen.",
     points: ["Native Kotlin & Java", "API & backend integration", "Ongoing support & updates"],
   },
   {
     icon: Blocks,
-    title: "Minecraft Spigot plugins",
+    title: "Minecraft Spigot Plugins",
     description:
-      "Custom server plugins for Spigot, Paper, and their forks — from small quality-of-life tweaks to entire game modes.",
-    points: ["Custom game mechanics", "Server performance tuning", "Cross-version compatibility"],
+      "Custom server plugins for Spigot, Paper, and their forks. From small quality-of-life tweaks to entire game modes.",
+    points: ["Custom game mechanics", "Maximum performance", "Cross-version compatibility"],
   },
 ];
 
@@ -32,7 +32,7 @@ export function Services() {
         <div className="mb-16 max-w-xl">
           <p className="eyebrow mb-4">What we build</p>
           <h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
-            Three disciplines, one standard of craft.
+            Here's what we do best, but we can go beyond
           </h2>
         </div>
 

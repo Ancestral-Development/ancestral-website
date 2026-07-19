@@ -1,15 +1,14 @@
 import { CONTACT_EMAIL, PORTFOLIO_URL } from "@/config";
 
 const SERVICE_LINKS = [
-  { label: "Desktop applications", href: "#services" },
-  { label: "Android apps", href: "#services" },
-  { label: "Minecraft Spigot plugins", href: "#services" },
+  { label: "Desktop Applications", href: "#services" },
+  { label: "Android Apps", href: "#services" },
+  { label: "Minecraft Spigot Plugins", href: "#services" },
 ];
 
 const SITE_LINKS = [
   { label: "About", href: "#about" },
   { label: "Services", href: "#services" },
-  { label: "Process", href: "#process" },
   { label: "Testimonials", href: "#testimonials" },
   { label: "Contact", href: "#contact" },
 ];
@@ -72,8 +71,7 @@ export function Footer() {
                   {CONTACT_EMAIL}
                 </a>
               </li>
-              <li>Response time: within 1 business day</li>
-              <li>Remote-first, working across time zones</li>
+              <li>Response time: within 1 day</li>
             </ul>
           </div>
         </div>

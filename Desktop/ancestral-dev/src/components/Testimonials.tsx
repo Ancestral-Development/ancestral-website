@@ -26,7 +26,7 @@ export function Testimonials() {
     <section id="testimonials" className="border-t border-border py-24 md:py-32">
       <div className="container">
         <div className="mb-16 max-w-xl">
-          <p className="eyebrow mb-4">In their words</p>
+          <p className="eyebrow mb-4">Don't take our word for it</p>
           <h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
             What it's like to work with us.
           </h2>

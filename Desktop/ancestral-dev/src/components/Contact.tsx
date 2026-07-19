@@ -12,8 +12,8 @@ export function Contact() {
             Tell us what you're building.
           </h2>
           <p className="mt-6 max-w-sm leading-relaxed text-muted-foreground">
-            Drop into our Discord and tell us about the project — that's
-            where we're most responsive.
+            Join our Discord and tell us about the project, that's
+            where we communicate fastest.
           </p>
           <div className="mt-10 space-y-2 font-mono text-sm">
             <p className="text-muted-foreground">Email</p>
@@ -30,7 +30,7 @@ export function Contact() {
           </h3>
           <p className="mt-3 leading-relaxed text-muted-foreground">
             Chat directly with the team, share what you're building, and get
-            a faster response than email — most questions get answered same-day.
+            a faster response than email. Most questions get answered the same day.
           </p>
           <ul className="mt-6 space-y-2 text-sm text-muted-foreground">
             <li className="flex items-center gap-2">

@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from "react";
-import { ArrowLeft, ArrowRight, Monitor, Smartphone, Blocks, MessageCircleQuestionIcon } from "lucide-react";
+import { ArrowLeft, ArrowRight, Monitor, Smartphone, Blocks, MessageCircleQuestionIcon, BlocksIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -7,19 +7,19 @@ import { Card, CardContent } from "@/components/ui/card";
 const PRODUCTS = [
   {
     icon: Monitor,
-    category: "Desktop App",
-    name: "Avalex CRM",
+    category: "Desktop Apps",
+    name: "Avalex CRM (Coming Soon)",
     description: "Business-grade CRM for various uses with numerous features and hooks.",
     price: "$74.99",
-    href: "#",
+    href: "#contact",
   },
   {
-    icon: MessageCircleQuestionIcon,
-    category: "Coming Soon",
-    name: "TBD",
-    description: "",
-    price: "N/A",
-    href: "#",
+    icon: BlocksIcon,
+    category: "Spigot Plugins",
+    name: "Recon Commons",
+    description: "A lightweight library for rapid development. Free and open-source forever.",
+    price: "Free",
+    href: "#contact",
   },
   {
     icon: MessageCircleQuestionIcon,
@@ -72,8 +72,7 @@ export function Products() {
               Premade products, ready to deploy.
             </h2>
             <p className="mt-4 leading-relaxed text-muted-foreground">
-              Already-built plugins and apps you can license today — no
-              custom timeline required.
+              Already-built plugins and apps you can purchase today with little to no delay.
             </p>
           </div>
 

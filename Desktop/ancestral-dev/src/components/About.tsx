@@ -1,11 +1,11 @@
 import { CheckCircle2 } from "lucide-react";
 
 const ADVANTAGES = [
-  "Direct access to the two or three people actually writing your code — no account managers relaying messages.",
-  "Fixed-scope quotes before work starts, so there are no surprise invoices halfway through.",
-  "Cross-platform range: desktop, Android, and Minecraft server software under one roof.",
-  "Documentation and clean handoffs by default, so another developer can pick up the project without you.",
-  "Post-launch support included for every project, not sold back to you as a separate contract.",
+  "We take pride in shipping a superior product, not in ripping off customers for light work.",
+  "Privacy comes first. We offer crypto payments as our preferred method.",
+  "Wide scope of services. Even if our site doesn't list it, there's a chance we can do it.",
+  "Our team consists of just a few competent people, including graduates, CS students and hobbyist developers.",
+  "Post-launch support is included for every project, not sold back to you as a separate contract.",
 ];
 
 export function About() {
@@ -29,7 +29,7 @@ export function About() {
         </div>
 
         <div>
-          <p className="eyebrow mb-6">Why teams work with us</p>
+          <p className="eyebrow mb-6">Why people work with us</p>
           <ul className="space-y-5">
             {ADVANTAGES.map((advantage) => (
               <li key={advantage} className="flex items-start gap-3">
