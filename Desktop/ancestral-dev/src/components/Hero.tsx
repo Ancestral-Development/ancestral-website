@@ -15,7 +15,7 @@ export function Hero() {
         <div className="max-w-3xl animate-fade-up">
           <p className="eyebrow mb-6">Ancestral Development</p>
           <h1 className="font-display text-5xl font-medium leading-[1.05] tracking-tight md:text-7xl">
-            Building the <span className="italic underline">Future</span>
+            Software built <span className="italic underline">Right</span>
           </h1>
           <p className="mt-8 max-w-xl text-lg leading-relaxed text-muted-foreground">
             Small software studio building next-generation tools for businesses and individuals. Providing custom solutions and premade products.
