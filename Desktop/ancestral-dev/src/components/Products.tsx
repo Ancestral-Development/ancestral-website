@@ -23,7 +23,7 @@ const PRODUCTS = [
   },
   {
     icon: BlocksIcon,
-    category: "Spigot Pkugins",
+    category: "Spigot Plugins",
     name: "Mithril Series",
     description: "Premium Spigot plugins for all types of gamemodes.",
     price: "$8.49 - $50",
