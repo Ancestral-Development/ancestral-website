@@ -7,11 +7,11 @@ import { Card, CardContent } from "@/components/ui/card";
 const PRODUCTS = [
   {
     icon: Monitor,
-    category: "Desktop Apps",
-    name: "Avalex CRM (Coming Soon)",
-    description: "Business-grade CRM for various uses with numerous features and hooks.",
-    price: "$74.99",
-    href: "#contact",
+    category: "Web Apps",
+    name: "Avalex CRM",
+    description: "Developer-focused CRM with licensing functionality.",
+    price: "$14.99",
+    href: "https://avalex.ancestraldev.com/",
   },
   {
     icon: BlocksIcon,
@@ -22,12 +22,12 @@ const PRODUCTS = [
     href: "#contact",
   },
   {
-    icon: MessageCircleQuestionIcon,
-    category: "Coming Soon",
-    name: "TBD",
-    description: "",
-    price: "N/A",
-    href: "#",
+    icon: BlocksIcon,
+    category: "Spigot Pkugins",
+    name: "Mithril Series",
+    description: "Premium Spigot plugins for all types of gamemodes.",
+    price: "Varies",
+    href: "https://discord.ancestraldev.com/",
   },
 ];
 
