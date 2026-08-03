@@ -26,7 +26,7 @@ const PRODUCTS = [
     category: "Spigot Pkugins",
     name: "Mithril Series",
     description: "Premium Spigot plugins for all types of gamemodes.",
-    price: "Varies",
+    price: "$8.49 - $50",
     href: "https://discord.ancestraldev.com/",
   },
 ];
