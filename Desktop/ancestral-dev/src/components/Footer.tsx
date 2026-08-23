@@ -1,12 +1,5 @@
-import { DISCORD_INVITE_URL, GITHUB_URL, PORTFOLIO_URL } from "@/config";
-
-const LINKS = [
-  { label: "Products", href: "#products" },
-  { label: "Services", href: "#services" },
-  { label: "Standards", href: "#standards" },
-  { label: "Reviews", href: "#reviews" },
-  { label: "Contact", href: "#contact" },
-];
+import { DISCORD_INVITE_URL, GITHUB_URL, TOS_URL, X_URL } from "@/config";
+import { Logo } from "@/components/Logo";
 
 export function Footer() {
   return (
@@ -15,24 +8,25 @@ export function Footer() {
 
         {/* Main Brand & Navigation Row */}
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-8 border-b border-zinc-100">
-          <a href="#top" className="flex items-center">
-            <img
-              src="/logo.svg"
-              alt="Ancestral Development"
-              className="h-8 sm:h-9 w-auto object-contain"
-            />
+          <a href="#top" className="flex items-center text-zinc-950 hover:opacity-90 transition-opacity">
+            <Logo className="h-6 sm:h-9 w-auto" />
           </a>
 
           <div className="flex flex-wrap items-center gap-6 text-sm font-medium">
-            {LINKS.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="hover:text-zinc-950 transition-colors"
-              >
-                {link.label}
-              </a>
-            ))}
+            <a
+              href="#contact"
+              className="hover:text-zinc-950 transition-colors"
+            >
+              Contact
+            </a>
+            <a
+              href={TOS_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-zinc-950 transition-colors"
+            >
+              Terms of Service
+            </a>
             <a
               href={DISCORD_INVITE_URL}
               target="_blank"
@@ -50,12 +44,12 @@ export function Footer() {
               GitHub
             </a>
             <a
-              href={PORTFOLIO_URL}
+              href={X_URL}
               target="_blank"
               rel="noreferrer"
               className="hover:text-zinc-950 transition-colors"
             >
-              Portfolio
+              X
             </a>
           </div>
         </div>

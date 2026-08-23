@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Logo } from "@/components/Logo";
 
 function DiscordIcon({ className = "h-3.5 w-3.5" }: { className?: string }) {
   return (
@@ -29,14 +30,10 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-zinc-200/80 bg-white/95 backdrop-blur-md">
       <div className="container mx-auto flex h-14 sm:h-20 max-w-5xl items-center justify-between px-5 sm:px-6">
-        
-        {/* Brand Logo */}
-        <a href="#top" className="flex items-center">
-          <img
-            src="/logo.svg"
-            alt="Ancestral Development"
-            className="h-7 sm:h-9.5 w-auto object-contain"
-          />
+
+        {/* Crisp Pure Vector Brand Logo */}
+        <a href="#top" className="flex items-center text-zinc-950 hover:opacity-90 transition-opacity">
+          <Logo className="h-7 sm:h-9 w-auto" />
         </a>
 
         {/* Desktop Navigation Links & Action */}
