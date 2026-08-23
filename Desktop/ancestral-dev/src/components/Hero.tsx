@@ -1,34 +1,43 @@
+import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { PORTFOLIO_URL, HERO_IMAGE_SRC, HERO_IMAGE_OPACITY } from "@/config";
+import { DISCORD_INVITE_URL } from "@/config";
 
 export function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden pt-40 pb-24 md:pt-52 md:pb-32">
-      <img
-        src={HERO_IMAGE_SRC}
-        alt=""
-        style={{ opacity: HERO_IMAGE_OPACITY }}
-        className="absolute inset-0 h-full w-full object-cover"
-      />
+    <section id="top" className="py-20 md:py-28 bg-white">
+      <div className="container mx-auto max-w-5xl px-6">
+        <div className="max-w-3xl space-y-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-zinc-200 bg-zinc-50 text-xs font-medium text-zinc-700">
+            <span>Software Development Team</span>
+          </div>
 
-      <div className="container relative z-10">
-        <div className="max-w-3xl animate-fade-up">
-          <p className="eyebrow mb-6">Ancestral Development</p>
-          <h1 className="font-display text-5xl font-medium leading-[1.05] tracking-tight md:text-7xl">
-            Building the <span className="italic underline">Future</span>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-zinc-950 leading-[1.1]">
+            Software engineered for precision and reliability.
           </h1>
-          <p className="mt-8 max-w-xl text-lg leading-relaxed text-muted-foreground">
-            Small software studio building next-generation tools for businesses and individuals. Providing custom solutions and premade products.
+
+          <p className="text-lg sm:text-xl text-zinc-600 leading-relaxed font-normal">
+            We design and build custom desktop tools, native Android applications, Discord bots, and secure licensing infrastructure.
           </p>
-          <div className="mt-10 flex flex-wrap items-center gap-4">
-            <a href="#contact">
-              <Button size="lg">Contact us</Button>
-            </a>
-            <a href={PORTFOLIO_URL} target="_blank" rel="noreferrer">
-              <Button variant="outline" size="lg">
-                View portfolio
-              </Button>
-            </a>
+
+          <div className="pt-2 flex flex-wrap items-center gap-3">
+            <Button size="lg" asChild className="h-11 px-6 text-sm font-medium rounded-lg shadow-xs">
+              <a href="#products">Explore Products</a>
+            </Button>
+
+            <Button variant="outline" size="lg" asChild className="h-11 px-6 text-sm font-medium rounded-lg border-zinc-200 hover:bg-zinc-50">
+              <a href={DISCORD_INVITE_URL} target="_blank" rel="noreferrer" className="gap-2">
+                <span>Join Discord</span>
+                <ArrowUpRight className="h-4 w-4 text-zinc-400" />
+              </a>
+            </Button>
+          </div>
+
+          <div className="pt-6 flex flex-wrap items-center gap-y-2 gap-x-6 text-xs text-zinc-500 font-medium">
+            <span>Affordability</span>
+            <span className="hidden sm:inline text-zinc-950 font-bold">•</span>
+            <span>Direct Communication</span>
+            <span className="hidden sm:inline text-zinc-950 font-bold">•</span>
+            <span>Crypto & Paypal Payments</span>
           </div>
         </div>
       </div>

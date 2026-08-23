@@ -1,140 +1,119 @@
-import { useRef, useState, useEffect } from "react";
-import { ArrowLeft, ArrowRight, Monitor, Smartphone, Blocks, MessageCircleQuestionIcon, BlocksIcon } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
+import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent } from "@/components/ui/card";
+import { AVALEX_URL, DISCORD_INVITE_URL } from "@/config";
 
 const PRODUCTS = [
   {
-    icon: Monitor,
-    category: "Desktop Apps",
-    name: "Avalex CRM (Coming Soon)",
-    description: "Business-grade CRM for various uses with numerous features and hooks.",
-    price: "$74.99",
-    href: "#contact",
+    name: "Avalex Licensing",
+    category: "Licensing Platform",
+    description:
+      "A commercial licensing platform and customer management system. Automated hardware ID hashing, IP validation, staff permissions, and real-time telemetry.",
+    price: "$8.79",
+    priceLabel: "Lifetime access",
+    actionLabel: "Visit Avalex",
+    href: AVALEX_URL,
+    external: true,
   },
   {
-    icon: BlocksIcon,
-    category: "Spigot Plugins",
     name: "Recon Commons",
-    description: "A lightweight library for rapid development. Free and open-source forever.",
+    category: "Developer Library",
+    description:
+      "A lightweight library for Minecraft server plugin development. Engineered for rapid performance and zero bloat. Available to everyone.",
     price: "Free",
-    href: "#contact",
+    priceLabel: "Open access",
+    actionLabel: "Get Library",
+    href: DISCORD_INVITE_URL,
+    external: true,
   },
   {
-    icon: MessageCircleQuestionIcon,
-    category: "Coming Soon",
-    name: "TBD",
-    description: "",
-    price: "N/A",
-    href: "#",
+    name: "Mithril Series",
+    category: "Spigot Plugins",
+    description:
+      "A series of high-performance Spigot plugins made to suit all server types. With our newest library, you can customize every message, material or sound to your liking.",
+    price: "~$10",
+    priceLabel: "Variable pricing",
+    actionLabel: "Contact Us",
+    href: "#contact",
+    external: false,
   },
 ];
 
 export function Products() {
-  const scrollerRef = useRef<HTMLDivElement>(null);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(true);
-
-  const updateScrollState = () => {
-    const el = scrollerRef.current;
-    if (!el) return;
-    setCanScrollLeft(el.scrollLeft > 8);
-    setCanScrollRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 8);
-  };
-
-  useEffect(() => {
-    updateScrollState();
-    const el = scrollerRef.current;
-    if (!el) return;
-    el.addEventListener("scroll", updateScrollState, { passive: true });
-    window.addEventListener("resize", updateScrollState);
-    return () => {
-      el.removeEventListener("scroll", updateScrollState);
-      window.removeEventListener("resize", updateScrollState);
-    };
-  }, []);
-
-  const scrollByAmount = (direction: "left" | "right") => {
-    const el = scrollerRef.current;
-    if (!el) return;
-    const amount = el.clientWidth * 0.8;
-    el.scrollBy({ left: direction === "left" ? -amount : amount, behavior: "smooth" });
-  };
-
   return (
-    <section id="products" className="border-t border-border py-24 md:py-32">
-      <div className="container">
-        <div className="mb-12 flex flex-wrap items-end justify-between gap-6">
-          <div className="max-w-xl">
-            <p className="eyebrow mb-4">Off the shelf</p>
-            <h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
-              Premade products, ready to deploy.
+    <section id="products" className="py-20 md:py-28 border-t border-zinc-100 bg-white">
+      <div className="container mx-auto max-w-7xl px-6 sm:px-8">
+        
+        {/* Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
+          <div className="space-y-2">
+            <span className="text-xs font-semibold uppercase tracking-wider text-zinc-500">
+              Releases & Software
+            </span>
+            <h2 className="text-3xl font-bold tracking-tight text-zinc-950">
+              Products
             </h2>
-            <p className="mt-4 leading-relaxed text-muted-foreground">
-              Already-built plugins and apps you can purchase today with little to no delay.
-            </p>
           </div>
-
-
-          {(canScrollLeft || canScrollRight) && (
-                      <div className="flex gap-3">
-                        {canScrollLeft && (
-                          <button
-                            onClick={() => scrollByAmount("left")}
-                            aria-label="Scroll left"
-                            className="flex h-11 w-11 items-center justify-center rounded-btn border border-foreground text-foreground transition-colors hover:bg-foreground hover:text-background"
-                          >
-                            <ArrowLeft className="h-4 w-4" />
-                          </button>
-                        )}
-                        {canScrollRight && (
-                          <button
-                            onClick={() => scrollByAmount("right")}
-                            aria-label="Scroll right"
-                            className="flex h-11 w-11 items-center justify-center rounded-btn border border-foreground text-foreground transition-colors hover:bg-foreground hover:text-background"
-                          >
-                            <ArrowRight className="h-4 w-4" />
-                          </button>
-                        )}
-                      </div>
-                    )}
+          <p className="text-base text-zinc-600 max-w-md font-normal leading-relaxed">
+            Standalone tools, open-source libraries, and miscellaneous projects.
+          </p>
         </div>
 
-      </div>
+        {/* 3 Wide Cards with Balanced Horizontal Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          {PRODUCTS.map((item) => (
+            <Card
+              key={item.name}
+              className="flex flex-col justify-between border-zinc-200/80 bg-white shadow-xs hover:border-zinc-300 hover:shadow-sm transition-all rounded-2xl p-7 sm:p-8 space-y-6"
+            >
+              {/* Card Body */}
+              <div className="space-y-4">
+                {/* Top Row: Name on Left, Category Pill on Right */}
+                <div className="flex items-center justify-between gap-3">
+                  <h3 className="text-xl font-bold tracking-tight text-zinc-950">
+                    {item.name}
+                  </h3>
+                  <span className="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-medium bg-zinc-100 text-zinc-700 shrink-0">
+                    {item.category}
+                  </span>
+                </div>
 
-      <div
-        ref={scrollerRef}
-        className="scrollbar-hide flex snap-x snap-mandatory gap-6 overflow-x-auto px-6 pb-4 md:px-[max(1.5rem,calc((100vw-1200px)/2+1.5rem))]"
-      >
-        {PRODUCTS.map(({ icon: Icon, category, name, description, price, href }) => (
-          <Card
-            key={name}
-            className="w-[280px] shrink-0 snap-start md:w-[320px]"
-          >
-            <CardContent className="flex h-full flex-col p-6">
-              <div className="flex items-center justify-between">
-                <Icon className="h-6 w-6" strokeWidth={1.5} />
-                <Badge variant="muted">{category}</Badge>
+                <p className="text-sm text-zinc-600 leading-relaxed">
+                  {item.description}
+                </p>
               </div>
-              <h3 className="mt-6 font-display text-xl font-medium">{name}</h3>
-              <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
-                {description}
-              </p>
-              <div className="mt-6 flex items-center justify-between border-t border-border pt-4">
-                <span className="font-mono text-sm">{price}</span>
-                <a href={href}>
-                  <Button variant="outline" size="sm">
-                    View
-                  </Button>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
-        ))}
 
-        {/* Spacer so the last card isn't flush against the edge */}
-        <div className="w-px shrink-0" aria-hidden="true" />
+              {/* Bottom Row: Price on Left, Action Button on Right */}
+              <div className="flex items-center justify-between gap-4 pt-4 border-t border-zinc-100/80">
+                <div>
+                  <span className="text-xl font-bold tracking-tight text-zinc-950 block leading-tight">
+                    {item.price}
+                  </span>
+                  <span className="text-xs text-zinc-500 font-medium block mt-0.5">
+                    {item.priceLabel}
+                  </span>
+                </div>
+
+                <Button
+                  variant="outline"
+                  size="sm"
+                  asChild
+                  className="h-9 px-4 text-xs font-medium border-zinc-200 bg-white hover:bg-zinc-50 text-zinc-900 rounded-lg gap-1.5 shadow-xs shrink-0"
+                >
+                  <a
+                    href={item.href}
+                    target={item.external ? "_blank" : undefined}
+                    rel={item.external ? "noreferrer" : undefined}
+                  >
+                    <span>{item.actionLabel}</span>
+                    {item.external && <ArrowUpRight className="h-3.5 w-3.5 text-zinc-400" />}
+                  </a>
+                </Button>
+              </div>
+            </Card>
+          ))}
+        </div>
+
       </div>
     </section>
   );
