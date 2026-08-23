@@ -68,12 +68,12 @@ export function Products() {
             >
               {/* Card Body */}
               <div className="space-y-4">
-                {/* Top Row: Name on Left, Category Pill on Right */}
+                {/* Top Row: Name on Left, Smaller Category Pill on Right */}
                 <div className="flex items-center justify-between gap-3">
                   <h3 className="text-xl font-bold tracking-tight text-zinc-950">
                     {item.name}
                   </h3>
-                  <span className="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-medium bg-zinc-100 text-zinc-700 shrink-0">
+                  <span className="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-zinc-100 text-zinc-600 shrink-0">
                     {item.category}
                   </span>
                 </div>

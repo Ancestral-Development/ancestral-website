@@ -32,11 +32,11 @@ export function Hero() {
             </Button>
           </div>
 
-          <div className="pt-6 flex flex-wrap items-center gap-y-2 gap-x-6 text-xs text-zinc-500 font-medium">
+          <div className="pt-6 flex flex-wrap items-center gap-y-2 gap-x-3 sm:gap-x-6 text-xs text-zinc-500 font-medium">
             <span>Affordability</span>
-            <span className="hidden sm:inline text-zinc-950 font-bold">•</span>
+            <span className="text-zinc-950 font-bold">•</span>
             <span>Direct Communication</span>
-            <span className="hidden sm:inline text-zinc-950 font-bold">•</span>
+            <span className="text-zinc-950 font-bold">•</span>
             <span>Crypto & Paypal Payments</span>
           </div>
         </div>

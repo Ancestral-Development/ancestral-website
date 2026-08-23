@@ -28,14 +28,14 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-zinc-200/80 bg-white/95 backdrop-blur-md">
-      <div className="container mx-auto flex h-18 sm:h-20 max-w-5xl items-center justify-between px-6">
-
+      <div className="container mx-auto flex h-14 sm:h-20 max-w-5xl items-center justify-between px-5 sm:px-6">
+        
         {/* Brand Logo */}
         <a href="#top" className="flex items-center">
           <img
             src="/logo.svg"
             alt="Ancestral Development"
-            className="h-9 sm:h-9.5 w-auto object-contain"
+            className="h-7 sm:h-9.5 w-auto object-contain"
           />
         </a>
 
@@ -50,9 +50,9 @@ export function Navbar() {
               {link.label}
             </a>
           ))}
-          <Button size="sm" asChild className="h-10 px-4 text-xs font-medium rounded-lg shadow-xs gap-2">
+          <Button size="sm" asChild className="h-9 px-4 text-xs font-medium rounded-lg shadow-xs gap-2">
             <a href="#contact" className="flex items-center gap-2">
-              <DiscordIcon className="h-4 w-4" />
+              <DiscordIcon className="h-3.5 w-3.5" />
               <span>Contact Us</span>
             </a>
           </Button>
@@ -62,7 +62,7 @@ export function Navbar() {
         <button
           type="button"
           onClick={() => setMobileOpen((v) => !v)}
-          className="p-2 md:hidden text-zinc-900 hover:bg-zinc-100 rounded-lg transition-colors"
+          className="p-1.5 md:hidden text-zinc-900 hover:bg-zinc-100 rounded-lg transition-colors"
           aria-label="Toggle navigation"
         >
           {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}

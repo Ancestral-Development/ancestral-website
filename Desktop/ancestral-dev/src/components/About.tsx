@@ -34,7 +34,7 @@ export function About() {
             How We Work
           </span>
           <h2 className="text-3xl font-bold tracking-tight text-zinc-950">
-            Studio Standards
+            Our Standards
           </h2>
           <p className="text-base text-zinc-600 leading-relaxed font-normal">
             Ancestral Development remains intentionally small. Every project is handled end-to-end by experienced programmers who understand the mechanics of the software they deliver.
