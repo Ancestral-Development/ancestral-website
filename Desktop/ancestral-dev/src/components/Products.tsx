@@ -10,7 +10,7 @@ const PRODUCTS = [
     description:
       "A commercial licensing platform and customer management system.",
     bullets: [
-      "Automated hardware ID hashing & IP validation",
+      "HWID & IP tracking and limiting",
       "Staff permissions and customer management",
       "Real-time telemetry and API integrations",
     ],
@@ -24,10 +24,10 @@ const PRODUCTS = [
     name: "Recon Commons",
     category: "Developer Library",
     description:
-      "A lightweight library for Minecraft server plugin development.",
+      "A lightweight library for Spigot plugin development.",
     bullets: [
       "Engineered for rapid performance & zero bloat",
-      "Modern asynchronous caching and utilities",
+      "Messaging and Item Builder utilities with YAML integration",
       "Open-source and freely accessible to everyone",
     ],
     price: "Free",
@@ -43,11 +43,11 @@ const PRODUCTS = [
       "A series of high-performance Spigot plugins made to suit all server types.",
     bullets: [
       "Fully customizable messages, materials, and sounds",
-      "Strict asynchronous safety with low tick impact",
+      "Strict performance focus with low tick impact",
       "Multi-version Spigot, Paper & Purpur support",
     ],
     price: "~$10",
-    priceLabel: "Variable pricing",
+    priceLabel: "Pricing varies",
     actionLabel: "Contact Us",
     href: "#contact",
     external: false,
