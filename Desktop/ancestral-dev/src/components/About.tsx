@@ -7,7 +7,7 @@ const PRINCIPLES = [
       "You speak directly with the developers writing and testing your code. No account managers, sales intermediaries, or redundant staff.",
   },
   {
-    title: "Clean, Purposeful Code",
+    title: "Clean, Maintainable Code",
     description:
       "We build to your exact specification, avoiding generic boilerplates and unnecessary dependencies.",
   },
