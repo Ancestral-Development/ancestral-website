@@ -35,7 +35,7 @@ export function Hero() {
           <div className="pt-6 flex flex-wrap items-center gap-y-2 gap-x-3 sm:gap-x-6 text-xs text-zinc-500 dark:text-zinc-400 font-medium">
             <span>Affordability</span>
             <span className="text-zinc-950 dark:text-zinc-100 font-bold">•</span>
-            <span>Direct Communication</span>
+            <span>Rapid Delivery</span>
             <span className="text-zinc-950 dark:text-zinc-100 font-bold">•</span>
             <span>Crypto & Paypal Payments</span>
           </div>

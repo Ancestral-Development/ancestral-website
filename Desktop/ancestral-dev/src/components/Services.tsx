@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from "react";
-import { Monitor, Smartphone, Server, ShieldCheck, Code2, ChevronLeft, ChevronRight } from "lucide-react";
+import { Monitor, Smartphone, Server, ShieldCheck, Code2, ChevronLeft, ChevronRight, BotIcon } from "lucide-react";
 import { Card } from "@/components/ui/card";
 
 const SERVICES = [
@@ -8,35 +8,35 @@ const SERVICES = [
     title: "Desktop & Web Applications",
     description:
       "Cross-platform software with modern web frontends. Built using React, Tauri and Java. Focused on rapid startup times, minimal memory consumption, and reliability under intense usage.",
-    tech: "React  •  Tauri  •  Java  •  MongoDB",
+    tech: ["React", "Tauri", "Java", "MongoDB"],
   },
   {
     icon: Smartphone,
     title: "Android Applications",
     description:
       "Native mobile apps written in modern Kotlin and Jetpack Compose. Sleek interfaces, reliable backends, smooth user experience.",
-    tech: "Kotlin  •  Jetpack Compose  •  Material Expressive",
+    tech: ["Kotlin", "Jetpack Compose", "Material Expressive"],
   },
   {
     icon: Server,
     title: "Spigot Plugins",
     description:
       "Custom plugins for Spigot, Paper, Purpur, and Velocity network proxies. Engineered with strict asynchronous safety, low tick impact, and multi-version game compatibility.",
-    tech: "Java  •  AbyssLib  •  Caffeine  •  MongoDB",
+    tech: ["Java", "AbyssLib", "Caffeine", "MongoDB"],
   },
   {
     icon: ShieldCheck,
     title: "Licensing & Security Infrastructure",
     description:
       "Automated software licensing systems, hardware ID hashing, IP validation, and various integrations such as BuiltByBit and Discord.",
-    tech: "Scala  •  MongoDB  •  REST APIs  •  CRMs",
+    tech: ["Scala", "MongoDB", "REST APIs", "CRMs"],
   },
   {
-    icon: Code2,
-    title: "Custom Projects",
+    icon: BotIcon,
+    title: "Discord Bots",
     description:
-      "Have a technical project not listed here? If you think we can build it, reach out with your requirements so we can discuss the possibilities.",
-    tech: "Variable Stack  •  On Inquiry",
+      "Bots with a wide range of capabilities. We can tailor the bot to your needs and build it from scratch, or create it as an addon to your existing infrastructure.",
+    tech: ["Discord4J", "Database Integration", "Web Panel"],
   },
 ];
 
@@ -140,7 +140,7 @@ export function Services() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div className="space-y-2">
             <span className="text-xs font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
-              Capabilities
+              What We Excel At
             </span>
             <h2 className="text-3xl font-bold tracking-tight text-zinc-950 dark:text-white">
               Services
@@ -218,11 +218,18 @@ export function Services() {
                   </p>
                 </div>
 
-                {/* Clean tech tag */}
-                <div className="pt-2 pointer-events-none">
-                  <span className="text-xs font-semibold text-zinc-900 dark:text-zinc-300">
-                    {item.tech}
-                  </span>
+                {/* Calibrated tech tag with optimal bullet spacing */}
+                <div className="pt-2 pointer-events-none flex flex-wrap items-center gap-x-2.5 gap-y-1 text-xs font-semibold text-zinc-900 dark:text-zinc-300">
+                  {item.tech.map((techItem, i) => (
+                    <span key={i} className="inline-flex items-center gap-2.5">
+                      <span>{techItem}</span>
+                      {i < item.tech.length - 1 && (
+                        <span className="text-zinc-400 dark:text-zinc-500 font-bold select-none text-[9px]">
+                          •
+                        </span>
+                      )}
+                    </span>
+                  ))}
                 </div>
               </Card>
             );

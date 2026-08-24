@@ -8,7 +8,12 @@ const PRODUCTS = [
     name: "Avalex Licensing",
     category: "Licensing Platform",
     description:
-      "A commercial licensing platform and customer management system. Automated hardware ID hashing, IP validation, staff permissions, and real-time telemetry.",
+      "A commercial licensing platform and customer management system.",
+    bullets: [
+      "Automated hardware ID hashing & IP validation",
+      "Staff permissions and customer management",
+      "Real-time telemetry and API integrations",
+    ],
     price: "$8.79",
     priceLabel: "Lifetime access",
     actionLabel: "Visit Avalex",
@@ -19,9 +24,14 @@ const PRODUCTS = [
     name: "Recon Commons",
     category: "Developer Library",
     description:
-      "A lightweight library for Minecraft server plugin development. Engineered for rapid performance and zero bloat. Available to everyone.",
+      "A lightweight library for Minecraft server plugin development.",
+    bullets: [
+      "Engineered for rapid performance & zero bloat",
+      "Modern asynchronous caching and utilities",
+      "Open-source and freely accessible to everyone",
+    ],
     price: "Free",
-    priceLabel: "Open access",
+    priceLabel: "Open-source",
     actionLabel: "Get Library",
     href: DISCORD_INVITE_URL,
     external: true,
@@ -30,7 +40,12 @@ const PRODUCTS = [
     name: "Mithril Series",
     category: "Spigot Plugins",
     description:
-      "A series of high-performance Spigot plugins made to suit all server types. With our newest library, you can customize every message, material or sound to your liking.",
+      "A series of high-performance Spigot plugins made to suit all server types.",
+    bullets: [
+      "Fully customizable messages, materials, and sounds",
+      "Strict asynchronous safety with low tick impact",
+      "Multi-version Spigot, Paper & Purpur support",
+    ],
     price: "~$10",
     priceLabel: "Variable pricing",
     actionLabel: "Contact Us",
@@ -43,7 +58,7 @@ export function Products() {
   return (
     <section id="products" className="py-20 md:py-28 border-t border-zinc-100 dark:border-zinc-800/80 bg-white dark:bg-zinc-950 transition-colors">
       <div className="container mx-auto max-w-7xl px-6 sm:px-8">
-        
+
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
           <div className="space-y-2">
@@ -67,7 +82,7 @@ export function Products() {
               className="flex flex-col justify-between border-zinc-200/80 dark:border-zinc-800 bg-white dark:bg-zinc-900/60 shadow-xs hover:border-zinc-300 dark:hover:border-zinc-700 hover:shadow-sm transition-all rounded-2xl p-7 sm:p-8 space-y-6"
             >
               {/* Card Body */}
-              <div className="space-y-4">
+              <div className="space-y-5">
                 {/* Top Row: Name on Left, Smaller Category Pill on Right */}
                 <div className="flex items-center justify-between gap-3">
                   <h3 className="text-xl font-bold tracking-tight text-zinc-950 dark:text-white">
@@ -78,9 +93,21 @@ export function Products() {
                   </span>
                 </div>
 
-                <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed font-normal">
                   {item.description}
                 </p>
+
+                {/* Spaced-out Bullet Points */}
+                <ul className="space-y-3 pt-1 text-sm text-zinc-600 dark:text-zinc-400">
+                  {item.bullets.map((bullet, idx) => (
+                    <li key={idx} className="flex items-start gap-3 leading-relaxed">
+                      <span className="text-zinc-950 dark:text-zinc-100 font-bold select-none text-base leading-5">
+                        •
+                      </span>
+                      <span>{bullet}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
 
               {/* Bottom Row: Price on Left, Action Button on Right */}
