@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/Logo";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 function DiscordIcon({ className = "h-3.5 w-3.5" }: { className?: string }) {
   return (
@@ -28,25 +29,28 @@ export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-zinc-200/80 bg-white/95 backdrop-blur-md">
+    <header className="sticky top-0 z-50 w-full border-b border-zinc-200/80 dark:border-zinc-800 bg-white/95 dark:bg-zinc-950/95 backdrop-blur-md transition-colors">
       <div className="container mx-auto flex h-14 sm:h-20 max-w-5xl items-center justify-between px-5 sm:px-6">
-
-        {/* Crisp Pure Vector Brand Logo */}
-        <a href="#top" className="flex items-center text-zinc-950 hover:opacity-90 transition-opacity">
+        
+        {/* Brand Logo with automatic color inversion */}
+        <a href="#top" className="flex items-center text-zinc-950 dark:text-white hover:opacity-90 transition-opacity">
           <Logo className="h-7 sm:h-9 w-auto" />
         </a>
 
-        {/* Desktop Navigation Links & Action */}
-        <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
+        {/* Desktop Navigation Links, Theme Toggle & Action */}
+        <nav className="hidden md:flex items-center gap-7 text-sm font-medium">
           {NAV_LINKS.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-zinc-600 hover:text-zinc-950 transition-colors"
+              className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white transition-colors"
             >
               {link.label}
             </a>
           ))}
+
+          <ThemeToggle />
+
           <Button size="sm" asChild className="h-9 px-4 text-xs font-medium rounded-lg shadow-xs gap-2">
             <a href="#contact" className="flex items-center gap-2">
               <DiscordIcon className="h-3.5 w-3.5" />
@@ -55,31 +59,34 @@ export function Navbar() {
           </Button>
         </nav>
 
-        {/* Mobile Hamburger Button */}
-        <button
-          type="button"
-          onClick={() => setMobileOpen((v) => !v)}
-          className="p-1.5 md:hidden text-zinc-900 hover:bg-zinc-100 rounded-lg transition-colors"
-          aria-label="Toggle navigation"
-        >
-          {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </button>
+        {/* Mobile Actions: Theme Toggle & Hamburger Button */}
+        <div className="flex md:hidden items-center gap-2">
+          <ThemeToggle />
+          <button
+            type="button"
+            onClick={() => setMobileOpen((v) => !v)}
+            className="p-1.5 text-zinc-900 dark:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-lg transition-colors cursor-pointer"
+            aria-label="Toggle navigation"
+          >
+            {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu Dropdown */}
       {mobileOpen && (
-        <div className="md:hidden border-b border-zinc-200 bg-white px-6 py-4 space-y-3">
+        <div className="md:hidden border-b border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 px-6 py-4 space-y-3">
           {NAV_LINKS.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={() => setMobileOpen(false)}
-              className="block py-1.5 text-sm font-medium text-zinc-600 hover:text-zinc-950"
+              className="block py-1.5 text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white transition-colors"
             >
               {link.label}
             </a>
           ))}
-          <div className="pt-3 border-t border-zinc-100">
+          <div className="pt-3 border-t border-zinc-100 dark:border-zinc-800">
             <Button size="sm" asChild className="w-full justify-center h-10 text-sm font-medium rounded-lg gap-2">
               <a href="#contact" onClick={() => setMobileOpen(false)} className="flex items-center justify-center gap-2">
                 <DiscordIcon className="h-4 w-4" />

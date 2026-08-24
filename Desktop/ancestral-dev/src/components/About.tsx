@@ -25,18 +25,18 @@ const PRINCIPLES = [
 
 export function About() {
   return (
-    <section id="standards" className="py-20 md:py-28 bg-white">
+    <section id="standards" className="py-20 md:py-28 bg-white dark:bg-zinc-950 transition-colors">
       <div className="container mx-auto max-w-5xl px-6">
 
-        {/* Section Header (No dividing line) */}
+        {/* Section Header */}
         <div className="max-w-2xl space-y-3 mb-12">
-          <span className="text-xs font-semibold uppercase tracking-wider text-zinc-500">
+          <span className="text-xs font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
             How We Work
           </span>
-          <h2 className="text-3xl font-bold tracking-tight text-zinc-950">
+          <h2 className="text-3xl font-bold tracking-tight text-zinc-950 dark:text-white">
             Our Standards
           </h2>
-          <p className="text-base text-zinc-600 leading-relaxed font-normal">
+          <p className="text-base text-zinc-600 dark:text-zinc-400 leading-relaxed font-normal">
             Ancestral Development remains intentionally small. Every project is handled end-to-end by experienced programmers who understand the mechanics of the software they deliver.
           </p>
         </div>
@@ -45,14 +45,14 @@ export function About() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-8">
           {PRINCIPLES.map((item) => (
             <div key={item.title} className="flex items-start gap-4">
-              <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-zinc-100 text-zinc-950 mt-0.5">
+              <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-950 dark:text-white mt-0.5">
                 <Check className="h-4 w-4 stroke-[2.5]" />
               </div>
               <div className="space-y-1">
-                <h3 className="text-lg font-bold text-zinc-950">
+                <h3 className="text-lg font-bold text-zinc-950 dark:text-white">
                   {item.title}
                 </h3>
-                <p className="text-sm text-zinc-600 leading-relaxed">
+                <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
                   {item.description}
                 </p>
               </div>

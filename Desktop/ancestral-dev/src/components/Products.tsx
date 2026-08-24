@@ -41,20 +41,20 @@ const PRODUCTS = [
 
 export function Products() {
   return (
-    <section id="products" className="py-20 md:py-28 border-t border-zinc-100 bg-white">
+    <section id="products" className="py-20 md:py-28 border-t border-zinc-100 dark:border-zinc-800/80 bg-white dark:bg-zinc-950 transition-colors">
       <div className="container mx-auto max-w-7xl px-6 sm:px-8">
         
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
           <div className="space-y-2">
-            <span className="text-xs font-semibold uppercase tracking-wider text-zinc-500">
+            <span className="text-xs font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
               Releases & Software
             </span>
-            <h2 className="text-3xl font-bold tracking-tight text-zinc-950">
+            <h2 className="text-3xl font-bold tracking-tight text-zinc-950 dark:text-white">
               Products
             </h2>
           </div>
-          <p className="text-base text-zinc-600 max-w-md font-normal leading-relaxed">
+          <p className="text-base text-zinc-600 dark:text-zinc-400 max-w-md font-normal leading-relaxed">
             Standalone tools, open-source libraries, and miscellaneous projects.
           </p>
         </div>
@@ -64,32 +64,32 @@ export function Products() {
           {PRODUCTS.map((item) => (
             <Card
               key={item.name}
-              className="flex flex-col justify-between border-zinc-200/80 bg-white shadow-xs hover:border-zinc-300 hover:shadow-sm transition-all rounded-2xl p-7 sm:p-8 space-y-6"
+              className="flex flex-col justify-between border-zinc-200/80 dark:border-zinc-800 bg-white dark:bg-zinc-900/60 shadow-xs hover:border-zinc-300 dark:hover:border-zinc-700 hover:shadow-sm transition-all rounded-2xl p-7 sm:p-8 space-y-6"
             >
               {/* Card Body */}
               <div className="space-y-4">
                 {/* Top Row: Name on Left, Smaller Category Pill on Right */}
                 <div className="flex items-center justify-between gap-3">
-                  <h3 className="text-xl font-bold tracking-tight text-zinc-950">
+                  <h3 className="text-xl font-bold tracking-tight text-zinc-950 dark:text-white">
                     {item.name}
                   </h3>
-                  <span className="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-zinc-100 text-zinc-600 shrink-0">
+                  <span className="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 shrink-0">
                     {item.category}
                   </span>
                 </div>
 
-                <p className="text-sm text-zinc-600 leading-relaxed">
+                <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
                   {item.description}
                 </p>
               </div>
 
               {/* Bottom Row: Price on Left, Action Button on Right */}
-              <div className="flex items-center justify-between gap-4 pt-4 border-t border-zinc-100/80">
+              <div className="flex items-center justify-between gap-4 pt-4 border-t border-zinc-100/80 dark:border-zinc-800">
                 <div>
-                  <span className="text-xl font-bold tracking-tight text-zinc-950 block leading-tight">
+                  <span className="text-xl font-bold tracking-tight text-zinc-950 dark:text-white block leading-tight">
                     {item.price}
                   </span>
-                  <span className="text-xs text-zinc-500 font-medium block mt-0.5">
+                  <span className="text-xs text-zinc-500 dark:text-zinc-400 font-medium block mt-0.5">
                     {item.priceLabel}
                   </span>
                 </div>
@@ -98,7 +98,7 @@ export function Products() {
                   variant="outline"
                   size="sm"
                   asChild
-                  className="h-9 px-4 text-xs font-medium border-zinc-200 bg-white hover:bg-zinc-50 text-zinc-900 rounded-lg gap-1.5 shadow-xs shrink-0"
+                  className="h-9 px-4 text-xs font-medium border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-700/80 text-zinc-900 dark:text-zinc-100 rounded-lg gap-1.5 shadow-xs shrink-0"
                 >
                   <a
                     href={item.href}

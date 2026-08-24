@@ -4,20 +4,20 @@ import { DISCORD_INVITE_URL } from "@/config";
 
 export function Contact() {
   return (
-    <section id="contact" className="py-20 md:py-28 bg-white border-t border-zinc-100">
+    <section id="contact" className="py-20 md:py-28 bg-white dark:bg-zinc-950 border-t border-zinc-100 dark:border-zinc-800/80 transition-colors">
       <div className="container mx-auto max-w-5xl px-6">
         <div className="max-w-2xl space-y-6">
           
           <div className="space-y-2">
-            <span className="text-xs font-semibold uppercase tracking-wider text-zinc-500">
+            <span className="text-xs font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
               Inquiries
             </span>
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-zinc-950">
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-zinc-950 dark:text-white">
               Start a Project
             </h2>
           </div>
 
-          <p className="text-base text-zinc-600 leading-relaxed font-normal">
+          <p className="text-base text-zinc-600 dark:text-zinc-400 leading-relaxed font-normal">
             Direct developer communication, from ticket creation to delivery. Join our Discord to open a private project ticket, view our latest portfolio showcases, or chat with our team.
           </p>
 
