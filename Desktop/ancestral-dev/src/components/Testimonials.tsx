@@ -1,3 +1,4 @@
+import { User } from "lucide-react";
 import { Card } from "@/components/ui/card";
 
 const TESTIMONIALS = [
@@ -52,13 +53,18 @@ export function Testimonials() {
                 "{item.quote}"
               </p>
 
-              <div className="flex flex-col items-start pt-2">
-                <span className="text-sm font-bold text-zinc-950 dark:text-white">
-                  {item.author}
-                </span>
-                <span className="text-xs text-zinc-500 dark:text-zinc-400 font-medium mt-0.5">
-                  {item.role}
-                </span>
+              <div className="flex items-center gap-3 pt-2">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 border border-zinc-200/60 dark:border-zinc-700/60">
+                  <User className="h-5 w-5 stroke-[2]" />
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-sm font-bold text-zinc-950 dark:text-white">
+                    {item.author}
+                  </span>
+                  <span className="text-xs text-zinc-500 dark:text-zinc-400 font-medium mt-0.5">
+                    {item.role}
+                  </span>
+                </div>
               </div>
             </Card>
           ))}
