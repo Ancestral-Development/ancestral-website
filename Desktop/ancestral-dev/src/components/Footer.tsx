@@ -19,7 +19,7 @@ export function Footer() {
               <Logo className="h-7 sm:h-8 w-auto" />
             </a>
             <p className="text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed font-normal">
-              Custom software engineering for desktop, mobile, and secure infrastructure.
+              Custom software engineering for desktop, mobile, and business infrastructure.
             </p>
           </div>
 

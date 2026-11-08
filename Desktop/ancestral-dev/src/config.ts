@@ -5,5 +5,6 @@ export const GITHUB_URL = "https://github.com/Ancestral-Development";
 export const AVALEX_URL = "https://avalex.ancestraldev.com";
 export const TOS_URL = "https://tos.ancestraldev.com";
 export const X_URL = "https://x.com/ancestral_dev";
+export const TRUSTPILOT_URL = "https://www.trustpilot.com/review/ancestraldev.com";
 export const HERO_IMAGE_SRC = "/hero.jpg";
 export const HERO_IMAGE_OPACITY = 0.2;
