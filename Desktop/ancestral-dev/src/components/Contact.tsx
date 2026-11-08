@@ -39,17 +39,22 @@ const DESKTOP: Item[] = [
   { icon: KeyRound, x: 80, y: 86, size: 46, rotate: 6, tile: true },
 ];
 
+// Phones and tablets: placed strictly above (top margin) and below (bottom margin)
+// so that zero icons ever sit behind the text, headline, or real feature icons.
 const MOBILE: Item[] = [
-  { icon: Code, x: 90, y: 5, size: 38, rotate: -8, tile: true },
-  { icon: Bug, x: 62, y: 7, size: 28, rotate: 8 },
-  { icon: Terminal, x: 7, y: 24, size: 28, rotate: -6 },
-  { icon: GitBranch, x: 93, y: 26, size: 32, rotate: 10, tile: true },
-  { icon: Cpu, x: 6, y: 46, size: 36, rotate: 8, tile: true },
-  { icon: Braces, x: 90, y: 50, size: 28, rotate: -6 },
-  { icon: Database, x: 12, y: 68, size: 30, rotate: 6 },
-  { icon: Bot, x: 92, y: 74, size: 38, rotate: -10, tile: true },
-  { icon: Command, x: 40, y: 92, size: 28, rotate: 0 },
-  { icon: KeyRound, x: 70, y: 94, size: 34, rotate: 6, tile: true },
+  // Top margin (above badge and heading)
+  { icon: Bug, x: 12, y: 5, size: 26, rotate: -6 },
+  { icon: Terminal, x: 58, y: 6, size: 26, rotate: 6 },
+  { icon: Code, x: 88, y: 5, size: 34, rotate: -8, tile: true },
+
+  // Bottom margin (strictly below all copy, real icons, and button)
+  { icon: GitBranch, x: 10, y: 88, size: 30, rotate: 10, tile: true },
+  { icon: Braces, x: 30, y: 89, size: 24, rotate: -6 },
+  { icon: Cpu, x: 50, y: 88, size: 32, rotate: 8, tile: true },
+  { icon: Database, x: 70, y: 89, size: 26, rotate: 6 },
+  { icon: Bot, x: 90, y: 88, size: 32, rotate: -10, tile: true },
+  { icon: Command, x: 38, y: 95, size: 26, rotate: 0 },
+  { icon: KeyRound, x: 72, y: 95, size: 30, rotate: 6, tile: true },
 ];
 
 function Scatter({ items, className }: { items: Item[]; className: string }) {
@@ -88,7 +93,7 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden py-16 sm:py-20 md:py-28 bg-white dark:bg-zinc-950 border-t border-zinc-100 dark:border-zinc-800/80 transition-colors"
+      className="relative overflow-hidden pt-16 pb-24 sm:py-20 md:py-28 bg-white dark:bg-zinc-950 border-t border-zinc-100 dark:border-zinc-800/80 transition-colors"
     >
       <Scatter items={MOBILE} className="inset-0 opacity-60 lg:hidden" />
       <Scatter items={DESKTOP} className="hidden lg:block inset-0" />
